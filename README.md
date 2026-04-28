@@ -51,6 +51,11 @@ GitHub: @gazirifatahmed
 
 Profession: Software Engineer & Mobile App Developer
 
-Developed with ❤️ by Gazi Rifat Ahmed<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 56 PM" src="https://github.com/user-attachments/assets/8d9ef116-2567-44b7-9fd5-76aed3bcc43d" />
-<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 56 PM (1)" src="https://github.com/user-attachments/assets/3200797c-f93a-4faa-bf2d-5fd60271bb7a" />
-<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 57 PM" src="https://github.com/user-attachments/assets/a9790794-8591-4e54-9cbd-7a56d43a7101" />
+Developed with ❤️ by Gazi Rifat Ahmed
+
+
+
+<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 57 PM" src="https://github.com/user-attachments/assets/7c63bdc5-c25f-4de6-8ad6-69761f4e24d0" />
+<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 56 PM" src="https://github.com/user-attachments/assets/3df3c0e9-e24a-424f-9bd0-8c6f8a2f44f6" />
+<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 56 PM (1)" src="https://github.com/user-attachments/assets/482dfaf6-df62-4223-a6d2-cc29a446b8e2" />
+
