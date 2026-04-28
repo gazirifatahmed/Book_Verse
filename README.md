@@ -18,19 +18,19 @@ Here is a glimpse of the modern Glassmorphic interface and seamless user experie
       <a href="https://github.com/user-attachments/assets/7c63bdc5-c25f-4de6-8ad6-69761f4e24d0">
         <img width="240" src="https://github.com/user-attachments/assets/7c63bdc5-c25f-4de6-8ad6-69761f4e24d0" alt="BookVerse Home Screen 1">
       </a>
-      <br><em>Home (Light Mode)</em>
+      <br><em>Home (Night Mode)</em>
     </td>
     <td align="center" style="border: none; padding: 10px;">
       <a href="https://github.com/user-attachments/assets/3df3c0e9-e24a-424f-9bd0-8c6f8a2f44f6">
         <img width="240" src="https://github.com/user-attachments/assets/3df3c0e9-e24a-424f-9bd0-8c6f8a2f44f6" alt="BookVerse Home Screen 2">
       </a>
-      <br><em>Menu (Glass UI)</em>
+      <br><em>Menu (Setting UI)</em>
     </td>
     <td align="center" style="border: none; padding: 10px;">
       <a href="https://github.com/user-attachments/assets/482dfaf6-df62-4223-a6d2-cc29a446b8e2">
         <img width="240" src="https://github.com/user-attachments/assets/482dfaf6-df62-4223-a6d2-cc29a446b8e2" alt="BookVerse Book List">
       </a>
-      <br><em>Book List</em>
+      <br><em>Reader Page</em>
     </td>
   </tr>
 </table>
