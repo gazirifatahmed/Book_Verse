@@ -91,6 +91,3 @@ Developed with ❤️ by Gazi Rifat Ahmed
 
 
 
-<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 57 PM" src="https://github.com/user-attachments/assets/a59a44d5-82bc-4da5-b7f1-cdb7d3a83554" />
-<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 56 PM" src="https://github.com/user-attachments/assets/108a1cc0-1a6c-434a-94d5-140b85ebc8c2" />
-<img width="817" height="1600" alt="WhatsApp Image 2026-04-28 at 11 46 56 PM (1)" src="https://github.com/user-attachments/assets/d5a5f249-46a2-40f8-b461-069ba7cb6b69" />
