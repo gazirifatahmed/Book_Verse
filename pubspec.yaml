@@ -1,0 +1,101 @@
+name: book_verse
+description: "BookVerse - A professional book reading application."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.2
+  google_fonts: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.1
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    # Book text files
+    - assets/books/porinita.txt
+    - assets/books/putul_nacher_itikotha.txt
+    - assets/books/gorvodharini.txt
+    - assets/books/uttaradhikar.txt
+    - assets/books/kalbela.txt
+    - assets/books/kalpurush.txt
+    - assets/books/satkahan.txt
+    - assets/books/mousholkal.txt
+    - assets/books/nondito_noroke.txt
+    - assets/books/shonkhonil_karagar.txt
+    - assets/books/krishnopokkho.txt
+    - assets/books/megh_boleche.txt
+    - assets/books/sajghor.txt
+    - assets/books/tomake.txt
+    - assets/books/ayna_ghor.txt
+    - assets/books/tondra_bilas.txt
+    - assets/books/kohen_kobi_kalidas.txt
+    - assets/books/daruchini_dwip.txt
+    - assets/books/megher_chaya.txt
+    - assets/books/rupali_dwip.txt
+    - assets/books/shuvro.txt
+    - assets/books/ei_shuvro_ei.txt
+    - assets/books/shuvro_geche_bone.txt
+    - assets/books/moyurakkhi.txt
+    - assets/books/dorjar_opashe.txt
+    - assets/books/himu.txt
+    - assets/books/chole_jay_bosonter_din.txt
+    - assets/books/aj_himur_biye.txt
+    - assets/books/debi.txt
+    - assets/books/nishad.txt
+    
+    # Active book cover images
+    - assets/images/porinita.png
+    - assets/images/putul_nacher_itikotha.png
+    - assets/images/gorvodharini.png
+    - assets/images/uttaradhikar.png
+    - assets/images/kalbela.png
+    - assets/images/kalpurush.png
+    - assets/images/satkahan.png
+    - assets/images/mousholkal.png
+    - assets/images/nondito_noroke.png
+    - assets/images/shonkhonil_karagar.png
+    - assets/images/krishnopokkho.png
+    - assets/images/megh_boleche.png
+    - assets/images/sajghor.png
+    - assets/images/tomake.png
+    - assets/images/ayna_ghor.png
+
+    # Disabled/Pending images (Commented out)
+    # - assets/images/tondra_bilas.png
+    # - assets/images/kohen_kobi_kalidas.png
+    # - assets/images/daruchini_dwip.png
+    # - assets/images/megher_chaya.png
+    # - assets/images/rupali_dwip.png
+    # - assets/images/shuvro.png
+    # - assets/images/ei_shuvro_ei.png
+    # - assets/images/shuvro_geche_bone.png
+    # - assets/images/moyurakkhi.png
+    # - assets/images/dorjar_opashe.png
+    # - assets/images/himu.png
+    # - assets/images/chole_jay_bosonter_din.png
+    # - assets/images/aj_himur_biye.png
+    # - assets/images/debi.png
+    # - assets/images/nishad.png
+
+    # App Icon
+    - assets/icon/app_icon.png
+
+# Launcher Icon Configuration
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#6C63FF"
+  adaptive_icon_foreground: "assets/icon/app_icon.png"
