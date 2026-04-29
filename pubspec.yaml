@@ -12,6 +12,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   provider: ^6.1.2
   google_fonts: ^6.1.0
+  share_plus: ^10.1.4
 
 dev_dependencies:
   flutter_test:
@@ -71,23 +72,21 @@ flutter:
     - assets/images/sajghor.png
     - assets/images/tomake.png
     - assets/images/ayna_ghor.png
-
-    # Disabled/Pending images (Commented out)
-    # - assets/images/tondra_bilas.png
-    # - assets/images/kohen_kobi_kalidas.png
-    # - assets/images/daruchini_dwip.png
-    # - assets/images/megher_chaya.png
-    # - assets/images/rupali_dwip.png
-    # - assets/images/shuvro.png
-    # - assets/images/ei_shuvro_ei.png
-    # - assets/images/shuvro_geche_bone.png
-    # - assets/images/moyurakkhi.png
-    # - assets/images/dorjar_opashe.png
-    # - assets/images/himu.png
-    # - assets/images/chole_jay_bosonter_din.png
-    # - assets/images/aj_himur_biye.png
-    # - assets/images/debi.png
-    # - assets/images/nishad.png
+    - assets/images/tondra_bilas.png
+    - assets/images/kohen_kobi_kalidas.png
+    - assets/images/daruchini_dwip.png
+    - assets/images/megher_chaya.png
+    - assets/images/rupali_dwip.png
+    - assets/images/shuvro.png
+    - assets/images/ei_shuvro_ei.png
+    - assets/images/shuvro_geche_bone.png
+    - assets/images/moyurakkhi.png
+    - assets/images/dorjar_opashe.png
+    - assets/images/himu.png
+    - assets/images/chole_jay_bosonter_din.png
+    - assets/images/aj_himur_biye.png
+    - assets/images/debi.png
+    - assets/images/nishad.png
 
     # App Icon
     - assets/icon/app_icon.png
@@ -99,3 +98,4 @@ flutter_launcher_icons:
   image_path: "assets/icon/app_icon.png"
   adaptive_icon_background: "#6C63FF"
   adaptive_icon_foreground: "assets/icon/app_icon.png"
+  
