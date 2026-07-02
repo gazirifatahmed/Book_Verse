@@ -1,4 +1,4 @@
-package com.example.book_verse
+package com.rifat.book_verse
 
 import io.flutter.embedding.android.FlutterActivity
 

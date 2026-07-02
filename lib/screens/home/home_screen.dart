@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen>
               right: -60,
               child: _GlowOrb(
                 size: 260,
-                color: accentDeep.withOpacity(isDark ? 0.18 : 0.10),
+                color: accentDeep.withValues(alpha: isDark ? 0.18 : 0.10),
               ),
             ),
             Positioned(
@@ -137,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen>
               left: -90,
               child: _GlowOrb(
                 size: 200,
-                color: accentGold.withOpacity(isDark ? 0.10 : 0.08),
+                color: accentGold.withValues(alpha: isDark ? 0.10 : 0.08),
               ),
             ),
 
@@ -154,12 +154,12 @@ class _HomeScreenState extends State<HomeScreen>
                       padding: const EdgeInsets.fromLTRB(20, 14, 12, 10),
                       decoration: BoxDecoration(
                         color: _isScrolled
-                            ? surfaceColor.withOpacity(0.85)
+                            ? surfaceColor.withValues(alpha: 0.85)
                             : Colors.transparent,
                         boxShadow: _isScrolled
                             ? [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.06),
+                                  color: Colors.black.withValues(alpha: 0.06),
                                   blurRadius: 20,
                                   offset: const Offset(0, 4),
                                 )
@@ -168,57 +168,65 @@ class _HomeScreenState extends State<HomeScreen>
                       ),
                       child: Row(
                         children: [
-                          // Logo mark
-                          Container(
-                            width: 34,
-                            height: 34,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [accentGold, accentDeep],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: accentDeep.withOpacity(0.35),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 4),
-                                )
-                              ],
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'B',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w800,
-                                  letterSpacing: -0.5,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          // App Icon and App Name integration
+                          Row(
                             children: [
-                              Text(
-                                'BookVerse',
-                                style: TextStyle(
-                                  color: textPrimary,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w800,
-                                  letterSpacing: -0.4,
+                              // মূল ইমেজ এবং ব্যাকআপ উভয়কেই সম্পূর্ণ Round Shape করা হয়েছে
+                              ClipOval(
+                                child: Image.asset(
+                                  'assets/icon/app_icon.png',
+                                  height: 34,
+                                  width: 34,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) {
+                                    // ইমেজ লোড না হলে এই ব্যাকআপ কন্টেইনারটি একদম গোলাকার দেখাবে
+                                    return Container(
+                                      width: 34,
+                                      height: 34,
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [accentGold, accentDeep],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                        ),
+                                        shape: BoxShape.circle, // এখানে বক্স শেপ থেকে সার্কেল শেপ করা হয়েছে
+                                      ),
+                                      child: const Center(
+                                        child: Text(
+                                          'B',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
-                              Text(
-                                'Your literary universe',
-                                style: TextStyle(
-                                  color: textSecondary,
-                                  fontSize: 10,
-                                  letterSpacing: 0.4,
-                                ),
+                              const SizedBox(width: 12),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'BookVerse',
+                                    style: TextStyle(
+                                      color: textPrimary,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w800,
+                                      letterSpacing: -0.4,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Your literary universe',
+                                    style: TextStyle(
+                                      color: textSecondary,
+                                      fontSize: 10,
+                                      letterSpacing: 0.4,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -242,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 context,
                                 PageRouteBuilder(
                                   pageBuilder: (_, a1, a2) => const SettingsScreen(),
-                                  transitionsBuilder: (_, anim, __, child) =>
+                                  transitionsBuilder: (_, anim, _, child) =>
                                       SlideTransition(
                                     position: Tween<Offset>(
                                       begin: const Offset(1, 0),
@@ -311,15 +319,15 @@ class _HomeScreenState extends State<HomeScreen>
                         borderRadius: BorderRadius.circular(18),
                         border: Border.all(
                           color: _isSearchFocused
-                              ? accentGold.withOpacity(0.7)
+                              ? accentGold.withValues(alpha: 0.7)
                               : Colors.transparent,
                           width: 1.5,
                         ),
                         boxShadow: [
                           BoxShadow(
                             color: _isSearchFocused
-                                ? accentGold.withOpacity(0.15)
-                                : Colors.black.withOpacity(isDark ? 0.25 : 0.07),
+                                ? accentGold.withValues(alpha: 0.15)
+                                : Colors.black.withValues(alpha: isDark ? 0.25 : 0.07),
                             blurRadius: _isSearchFocused ? 20 : 12,
                             offset: const Offset(0, 4),
                           ),
@@ -337,7 +345,7 @@ class _HomeScreenState extends State<HomeScreen>
                         decoration: InputDecoration(
                           hintText: 'Search titles, authors...',
                           hintStyle: TextStyle(
-                            color: textSecondary.withOpacity(0.6),
+                            color: textSecondary.withValues(alpha: 0.6),
                             fontSize: 14,
                           ),
                           prefixIcon: Padding(
@@ -362,7 +370,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   child: Container(
                                     margin: const EdgeInsets.all(10),
                                     decoration: BoxDecoration(
-                                      color: textSecondary.withOpacity(0.15),
+                                      color: textSecondary.withValues(alpha: 0.15),
                                       shape: BoxShape.circle,
                                     ),
                                     child: Icon(
@@ -473,7 +481,6 @@ class _HomeScreenState extends State<HomeScreen>
 
 // ── Supporting Widgets ─────────────────────────────────────────────────────────
 
-/// Animated list item with staggered entrance
 class _AnimatedBookItem extends StatefulWidget {
   final int index;
   final Widget child;
@@ -504,7 +511,6 @@ class _AnimatedBookItemState extends State<_AnimatedBookItem>
       end: Offset.zero,
     ).animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOutCubic));
 
-    // Staggered delay per index
     Future.delayed(Duration(milliseconds: 60 * widget.index), () {
       if (mounted) _ctrl.forward();
     });
@@ -531,7 +537,6 @@ class _AnimatedBookItemState extends State<_AnimatedBookItem>
   }
 }
 
-/// Glowing background orb
 class _GlowOrb extends StatelessWidget {
   final double size;
   final Color color;
@@ -553,7 +558,6 @@ class _GlowOrb extends StatelessWidget {
   }
 }
 
-/// Premium icon button with subtle glass surface
 class _PremiumIconButton extends StatefulWidget {
   final IconData icon;
   final VoidCallback onTap;
@@ -606,17 +610,17 @@ class _PremiumIconButtonState extends State<_PremiumIconButton>
           width: 38,
           height: 38,
           decoration: BoxDecoration(
-            color: widget.surfaceColor.withOpacity(widget.isDark ? 0.6 : 0.9),
+            color: widget.surfaceColor.withValues(alpha: widget.isDark ? 0.6 : 0.9),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: widget.isDark
-                  ? Colors.white.withOpacity(0.06)
-                  : Colors.black.withOpacity(0.06),
+                  ? Colors.white.withValues(alpha: 0.06)
+                  : Colors.black.withValues(alpha: 0.06),
               width: 1,
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Colors.black.withValues(alpha: 0.08),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),
@@ -635,7 +639,6 @@ class _PremiumIconButtonState extends State<_PremiumIconButton>
   }
 }
 
-/// Beautiful empty state
 class _EmptyState extends StatelessWidget {
   final Color textPrimary;
   final Color textSecondary;
@@ -657,13 +660,13 @@ class _EmptyState extends StatelessWidget {
             width: 80,
             height: 80,
             decoration: BoxDecoration(
-              color: accentGold.withOpacity(0.1),
+              color: accentGold.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(
               Icons.auto_stories_rounded,
               size: 36,
-              color: accentGold.withOpacity(0.7),
+              color: accentGold.withValues(alpha: 0.7),
             ),
           ),
           const SizedBox(height: 18),

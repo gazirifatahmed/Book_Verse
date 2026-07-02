@@ -1,3 +1,13 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+// ১. key.properties ফাইল লোড করার লজিক
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -6,7 +16,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.book_verse"
+    namespace = "com.rifat.book_verse"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -15,15 +25,26 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    @Suppress("DEPRECATION")
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = "17"
+    }
+
+    // ২. রিলিজ সাইনিং কনফিগারেশন
+    signingConfigs {
+        create("release") {
+            keyAlias = keystoreProperties["keyAlias"] as String? ?: "upload"
+            keyPassword = keystoreProperties["keyPassword"] as String? ?: "123456"
+            storePassword = keystoreProperties["storePassword"] as String? ?: "123456"
+            
+            val storeFilePath = keystoreProperties["storeFile"] as String? 
+                ?: "C:\\Users\\Gazi_Rifat_Ahmed\\upload-keystore.jks"
+            storeFile = file(storeFilePath)
+        }
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.book_verse"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        applicationId = "com.rifat.book_verse"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -32,9 +53,16 @@ android {
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName("release")
+            
+            // প্লে স্টোরের জন্য কোড সিকিউর এবং সাইজ ছোট করার জন্য ট্রু করা হলো
+            isMinifyEnabled = true
+            isShrinkResources = true
+            
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }
